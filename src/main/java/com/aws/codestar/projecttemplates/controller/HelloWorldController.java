@@ -18,6 +18,7 @@ public class HelloWorldController {
 
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity helloWorldGet(@RequestParam(value = "name", defaultValue = "World") String name) {
+        throw new Exception("Échec de pipeline!");
         return ResponseEntity.ok(createResponse(name));
     }
 
